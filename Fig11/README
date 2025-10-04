@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------
+MATLAB *.m files
+--------------------------------------------------------------------------
+
+First run "stress_analyze_cell_multiplemods.m" to compute statistics.  Note
+that the paths of the various folders are given in the file so the user will
+need to change those appropriately to point to the location of the model
+output
+
+Fig11_vary_wTF_mpw.m plots figure 11                 
+---------------------------------------------------------------------------
+LaMEM input files: These are used to produce the model output ready by the 
+above MATLAB scripts. Filename convention:
+T30Nuk2Weak25MagP0375.dat
+Transform length=30, Nussult number Nu=2, Friction on TF and FZ multiplied
+by 0.25, magma pressure width=0.375 km
+
+
+
+
