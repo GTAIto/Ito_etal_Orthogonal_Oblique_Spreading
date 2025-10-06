@@ -2,7 +2,7 @@
 % Plots output quantities to look for factors that influence TF stability
 %==========================================================================
 clear;
-res=load('/home/mahi/gito/LaMEM_work/hd9g3v1/sxx_results_wTF.txt');
+res=load('LaMEM_Input_Files_Output_Folders/sxx_results.txt');
 % n1=res(:,1); n2=res(:,2); h0=res(:,3); dh=res(:,4); 
 % diffs_ave=res(:,5); dwdt=res(:,6); smax=res(:,7); dsig_tot=-res(:,8); mpw=res(:,14);
 % TFfrict=0.6*(1-res(:,13)/100);

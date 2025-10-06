@@ -10,7 +10,7 @@
 %clear;
 clear;
 
-cd /home/mahi/gito/LaMEM_work/hd9g3v1
+cd ../LaMEM_Input_Files_Output_Folders
 
 magPwidth=1000;
 dtave=0.5;  %time over which to evaluate mean slope. Other numbers are start times for dynamic dikingcd 
@@ -36,14 +36,14 @@ series_s='TFlength';
 for iplot=1:4
 tickarray=[0:10:30];
 if (iplot==1)   
-    fig1='102'; fig2='50';   cd T30nuk1wTF50FZ/mpw1e3st380; logdir='log'; xridge=15; istep=390;
+    fig1='102'; fig2='50';   cd L30Nu1Weak50/Wm1e3st380; logdir='log'; xridge=15; istep=390;
 elseif (iplot==2)
-    fig1='103'; fig2='51';   cd T30nuk2wTF50FZ/mpw1e3; logdir='log'; xridge=15; istep=310;
+    fig1='103'; fig2='51';   cd L30Nu2Weak50/Wm1e3; logdir='log'; xridge=15; istep=310;
 elseif (iplot==3)
-    fig1='120'; fig2='52';   cd T30nuk2wTF25FZ/mpw1e3; logdir='log'; istep=310;xridge=15; 
+    fig1='120'; fig2='52';   cd L30Nu2Weak25/Wm1e3; logdir='log'; istep=310;xridge=15; 
 elseif (iplot==4)
-    %fig1='120'; fig2='53';   cd T20nuk2wTF50FZ/mpw1e3str350; logdir='log'; istep=360; xridge=10; 
-    fig1='120'; fig2='53';   cd T30nuk2wTF75FZ/mpw1e3; logdir='log'; istep=310; xridge=15; 
+    %fig1='120'; fig2='53';   cd T20nuk2Weak50/Wm1e3str350; logdir='log'; istep=360; xridge=10; 
+    fig1='120'; fig2='53';   cd L30Nu2Weak75/Wm1e3; logdir='log'; istep=310; xridge=15; 
 end
 
 

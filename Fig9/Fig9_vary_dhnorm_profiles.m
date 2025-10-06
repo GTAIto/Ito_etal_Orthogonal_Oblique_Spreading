@@ -31,15 +31,15 @@ set(gcf,'Color','w');
 
 
 for imod=[1 2 3]
-    cd /home/mahi/gito/LaMEM_work/hd9g3v1
+    cd LaMEM_Input_Files_Output_Folders
     istep=310;
     xridge=15;
     if (imod==3)
-        fig1='100'; fig2='31';   cd T30nuk1wTF50FZ/mpw1e3st380; logdir='log'; xridge=15; istep=390; 
+        fig1='100'; fig2='31';   cd L30Nu1Weak50/Wm1e3; logdir='log'; xridge=15; istep=390; 
     elseif (imod==2)
-        fig1='101'; fig2='42';   cd T30nuk1.75wTF50FZ/mpw1e3; logdir='log';  xridge=15; istep=310; 
+        fig1='101'; fig2='42';   cd L30Nu1.75Weak50/Wm1e3; logdir='log';  xridge=15; istep=310; 
     elseif (imod==1)
-        fig1='102'; fig2='53';   cd T30nuk2.5wTF50FZ/mpw1e3; logdir='log'; xridge=15;
+        fig1='102'; fig2='53';   cd L30Nu2.5Weak50/Wm1e3; logdir='log'; xridge=15;
 
     end
 

@@ -9,7 +9,7 @@
 %iprof=find(abs(xc-xprof)==min(abs(xc-xprof)),1);
 %clear;
 clear;
-!cd /home/mahi/gito/LaMEM_work/hd9g3v1
+!cd LaMEM_Input_Files_Output_Folders
 magPwidth=1000;
 showfig=1;
 show_dike_hist=1;
@@ -38,10 +38,8 @@ magPfac=1;
 zsol_max=-20;
 
 
-%fname=['sxx_results_Tsol' num2str(Tsol) '.txt'];
 !/bin/rm sxx_results.txt
-%pwd
-fidout=fopen('sxx_results_wTF.txt','w');
+fidout=fopen('sxx_results.txt','w');
 fig1='30'; fig2='20';  
 
 dtave0=0.5; %time over which to evaluate mean slope. Other numbers are start times for dynamic diking
@@ -57,66 +55,19 @@ iwhich='dhnorm   ';
 for imod=1:5
     istep=310;
     dtstart=0;
-if (sum(iwhich(1:3)=='wTF')==3)
-    mpwstr='mpw1e3'; mpw=1e3; 
-    if (imod==1)
-        fig1='10'; fig2='15';    eval(['cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF00FZ/' mpwstr ';']); logdir='log'; dtave=0.45;
-        %logdir='../mpw1e3fx075fy60/log'; istep=320; mpw=1e3;
-    elseif (imod==2)
-        fig1='20'; fig2='25';    eval(['cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF25FZ/' mpwstr ';']);   logdir='log'; dtave=0.45;
-    elseif (imod==3)
-        fig1='30'; fig2='35';    eval(['cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF50FZ/' mpwstr ';']);  logdir='log'; dtave=0.45;
-    elseif (imod==4)
-        fig1='40'; fig2='45';    eval(['cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF75FZ/' mpwstr ';']);  logdir='log'; dtave=0.45;
-    elseif (imod==5)
-        fig1='50'; fig2='45';    eval(['cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF90FZ/' mpwstr ';']); logdir='log'; dtave=0.45;
-    end
-
-elseif (sum(iwhich(1:6)=='dhnorm')==6) %hd9, dnorm
     if (imod==1)
         istep=390; 
-        fig1='1'; fig2='5';   cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk1wTF50FZ/mpw1e3st380; logdir='log';dtave=0.5; mpw=1e3; 
-        %fig1='1'; fig2='5';   cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk1wTF50FZ/mpw1e3; logdir='log';dtave=0.5; mpw=1e3; 
+        fig1='1'; fig2='5';   cd LaMEM_Input_Files_Output_Folders/L30Nu1Weak50/Wm1e3; logdir='log';dtave=0.5; mpw=1e3; 
+        %fig1='1'; fig2='5';   cd LaMEM_Input_Files_Output_Folders/L30Nu1Weak50/Wm1e3; logdir='log';dtave=0.5; mpw=1e3; 
     elseif (imod==2)
-        fig1='12'; fig2='25';   cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk1.5wTF50FZ/mpw1e3; logdir='log';  dtave=0.5; mpw=1e3; 
+        fig1='12'; fig2='25';   cd LaMEM_Input_Files_Output_Folders/L30Nu1.5Weak50/Wm1e3; logdir='log';  dtave=0.5; mpw=1e3; 
     elseif (imod==3)
-        fig1='22'; fig2='35';   cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk1.75wTF50FZ/mpw1e3; logdir='log';  dtave=0.5; mpw=1e3; 
+        fig1='22'; fig2='35';   cd LaMEM_Input_Files_Output_Folders/L30Nu1.75Weak50/Wm1e3; logdir='log';  dtave=0.5; mpw=1e3; 
     elseif (imod==4)
-        fig1='20'; fig2='45';	cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF50FZ/mpw1e3;  logdir='log';dtave=0.45; mpw=1e3; 
+        fig1='20'; fig2='45';	cd LaMEM_Input_Files_Output_Folders/L30Nu2Weak50/Wm1e3;  logdir='log';dtave=0.45; mpw=1e3; 
     elseif (imod==5) 
-        fig1='30'; fig2='55';   cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2.5wTF50FZ/mpw1e3; logdir='log';  dtave=0.45; mpw=1e3; 
+        fig1='30'; fig2='55';   cd LaMEM_Input_Files_Output_Folders/L30Nu2.5Weak50/Wm1e3; logdir='log';  dtave=0.45; mpw=1e3; 
     end
-    
-elseif (sum(iwhich(1:8)=='TFlength')==8)  %hd9 TF Length
-    if (imod==1)     
-       fig2='5'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T05nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.4;
-    elseif (imod==2)     
-       fig2='15'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T10nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.3;
-    elseif (imod==3)
-       istep=360;
-       fig2='25'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T20nuk2wTF50FZ/mpw1e3str350;  logdir='log'; mpw=1e3;  dtave=0.7;
-       %dtstart=2.75;
-    elseif (imod==4)
-        fig2='35'; fig2='37'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T30nuk2wTF50FZ/mpw1e3; logdir='log'; mpw=1e3;  dtave=0.45; 
-    elseif (imod==5)
-        fig1='40'; fig2='45'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T40nuk2wTF50FZ/mpw1e3orig;  logdir='log'; mpw=1e3; dtave=0.45;
-    elseif (imod==6)
-        fig1='50'; fig2='55'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T50nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.45;
-    elseif (imod==7)
-        fig1='60'; fig2='65'; cd /home/mahi/gito/LaMEM_work/hd9g3v1/T60nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.45;
-    end 
-    
-elseif (sum(iwhich(1:6)=='g4v1LT')==6)  %Wide models
-    if (imod==1)     
-        fig2='5'; cd /home/mahi/gito/LaMEM_work/g4nx512/T10nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.4;
-    elseif (imod==2)     
-       fig2='10'; cd /home/mahi/gito/LaMEM_work/g4nx512/T30nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.4;
-    elseif (imod==3)     
-       fig2='15'; cd /home/mahi/gito/LaMEM_work/g4nx512/T50nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.4;
-    elseif (imod==4)     
-       fig2='20'; cd /home/mahi/gito/LaMEM_work/g4nx512/T60nuk2wTF50FZ/mpw1e3;  logdir='log'; mpw=1e3; dtave=0.4;
-    end
-end
 %--------------------------------------------------------------------------
 % Parse model params
 %--------------------------------------------------------------------------
@@ -175,5 +126,5 @@ end
     
     fprintf(fidout,'%4.2f %4.2f  %4.2f  %4.2f  %4.2f  %5.1f   %3.0f    %5.2f      %5.4f      %5.3f     %5.3f   %5.2f  %5.1f  %7.4f  %4.2f  %5.1f  %8.3f \n', outmean');
 end
-%TFlength_measure_rate
+
 fclose(fidout);

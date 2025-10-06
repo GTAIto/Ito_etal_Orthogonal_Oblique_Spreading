@@ -10,8 +10,6 @@
 %clear;
 clear;
 
-cd /home/mahi/gito/LaMEM_work/hd9g3v1
-
 magPwidth=1000;
 dtave=0.5;  %time over which to evaluate mean slope. Other numbers are start times for dynamic dikingcd 
 Tsol=600; ylimsxxnorm=[0 4]; ylimlthick=[1 8]; ylimsxx=[0 1000]; ylimdsxx=[0 150];
@@ -30,8 +28,6 @@ xcc=[xL:0.01:xR];
 %xL=-11; xR=11;
 
 yTFfxx=1;
-series_s= 'dhnorm  ';
-%series_s='TFlength';
 series_s= 'wTF     ';
 figure(1); clf
 set(gcf,'Color','w'); 
@@ -41,9 +37,9 @@ for imod=[1 2]
     istep=310;
     xridge=15;
     if (imod==1)
-       cd T30nuk2wTF75FZ/mpw1e3; logdir='log';
+       cd ../LaMEM_Input_Files_Output_Folders/L30Nu2Weak75/Wm1e3; logdir='log';
     elseif (imod==2)
-       cd T30nuk2wTF25FZ/mpw1e3; logdir='log';
+       cd  cd ../LaMEM_Input_Files_Output_Folders/L30Nu2Weak25/Wm1e3; logdir='log';
     end
 
 
@@ -133,7 +129,7 @@ plot(xcc,fxx_cc_ave,'Color',blu,'Linewidth',lwLam); hold on;
 sxx_a_cc=interp1(x-xridge,sxx_a_ave,xcc);
 plot(xcc,sxx_a_cc,'Color',red,'Linewidth',mlw); hold on;
 xlim([-2 2]);
-xticks([-1.5 0 1.5]);
+xticks([-1.5 0 1.5]); 
 if (imod==2)
     %ylabel('\sigma_x_x (MPa)','FontSize',fsz)
     ax = gca; % Get current axes
