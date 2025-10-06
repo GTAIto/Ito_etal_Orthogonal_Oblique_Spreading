@@ -18,7 +18,7 @@ This repository has all input files and MATLAB scripts needed to reproduce Figur
 
 # Software
 
-The 3D numerical models were produced using the using the open source geodynamics software LaMEM (Lithosphere and Mantle Evolution Model, https://gitnub.com/lamem), version 2.2.0, provided here as well as on Zenodo [!\[DOI](https://zenodo.org/badge/835081143.svg)](https://zendo.org/badge/xyx).  The MATLAB codes produced the 2D elastic models and are included.
+The 3D numerical models were produced using the using the open source geodynamics software LaMEM (Lithosphere and Mantle Evolution Model, https://github.com/UniMainzGeo/LaMEM), version 2.2.0, provided here as well as on Zenodo (https://zendo.org).  The MATLAB codes produced the 2D elastic models and are included.
 
 
 
