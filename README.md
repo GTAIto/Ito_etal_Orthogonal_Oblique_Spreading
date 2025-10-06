@@ -12,15 +12,17 @@ Garrett Ito (gito@hawaii.edu), Jana Schierjott, Mark D. Behn, Xiaochuan Tian, Bo
 
 # Overview
 
-This repository has all input files and MATLAB scripts needed to reproduce Figures 2, 4, 5, 7, 8, 9, 10 and 11. 
+This repository has all input files and MATLAB scripts needed to reproduce Figures 2, 4, 5, 7, 8, 9, 10 and 11.
 
 # 
 
 # Software
 
-The 3D numerical models were produced using the using the open source geodynamics software LaMEM (Lithosphere and Mantle Evolution Model, https://gitnub.com/lamem), version 2.2.0, provided here as well as on Zenodo [!\[DOI](https://zenodo.org/badge/835081143.svg)](https://zendo.org/badge/xyx).  The MATLAB codes produced the 2D elastic models and are included. 
+The 3D numerical models were produced using the using the open source geodynamics software LaMEM (Lithosphere and Mantle Evolution Model, https://gitnub.com/lamem), version 2.2.0, provided here as well as on Zenodo [!\[DOI](https://zenodo.org/badge/835081143.svg)](https://zendo.org/badge/xyx).  The MATLAB codes produced the 2D elastic models and are included.
 
 
 
-## Videos Associated with Figures 2 and 4
+## Videos
+
+See \*mp4 files in Fig2 and Fig4
 
