@@ -3,7 +3,7 @@
 %==========================================================================
 clear;
 
-res=load('LaMEM_Input_Files_Output_Folders/sxx_results.txt'); Tsol=1000;
+res=load('LaMEM_Input_Files_Output_Folders/sxx_results_dhnorm.txt'); Tsol=1000;
 n1=res(:,1); n2=res(:,2); h0=res(:,3); dh=res(:,4); 
 diffs_ave=res(:,5); dwdt=-res(:,6); smax=res(:,7); sig_var=-res(:,8); 
 fxxslope1=res(:,14); lthick_TF=res(:,15);

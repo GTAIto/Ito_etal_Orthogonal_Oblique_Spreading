@@ -39,7 +39,7 @@ zsol_max=-20;
 
 
 !/bin/rm sxx_results.txt
-fidout=fopen('sxx_results.txt','w');
+fidout=fopen('sxx_results_dhnorm.txt','w');
 fig1='30'; fig2='20';  
 
 dtave0=0.5; %time over which to evaluate mean slope. Other numbers are start times for dynamic diking

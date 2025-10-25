@@ -4,13 +4,13 @@
 clear;
 yTFfxx=1;  %within this distance of TF, Fxx=Sigr;
 
-res=load('/home/mahi/gito/LaMEM_work/hd9g3v1/sxx_results_LTF.txt'); Tsol=1000;
+res=load('LaMEM_Input_Files_Output_Folders/sxx_results_LTF.txt'); Tsol=1000;
 n1=res(:,1); n2=res(:,2); h0=res(:,3); dh=res(:,4); 
 diffs_ave=res(:,5); dwdt=res(:,6); smax=res(:,7); dsig_var=-res(:,8); mpw=res(:,17);
 weak_mods=res(:,13); LTF=res(:,16);
 dsnorm2=abs(diffs_ave./dsig_var);
 
-res=load('/home/mahi/gito/LaMEM_work/hd9g3v1/sxx_results_dhnorm.txt'); Tsol=1000;
+res=load('LaMEM_Input_Files_Output_Folders/sxx_results_dhnorm.txt'); Tsol=1000;
 h03=res(:,3); dh3=res(:,4); 
 diffs_ave3=res(:,5); dwdt3=res(:,6); sig_var3=-res(:,8); 
 dsnorm23=abs(diffs_ave3./sig_var3);
