@@ -1,12 +1,7 @@
---------------------------------------------------------------------------
-MATLAB *.m files
----------------------------------------------------------------------------
-Fig7_LaMEM_analytic_stress_profs.m will then produce Fig. 5 
-   
 ---------------------------------------------------------------------------
 LaMEM Models:
 LaMEM_Input_Files_Output_Folders/L30Nu1Weak50
-(L=30 km, Nu=1, TF & FZ friction angle weakening by 50%):
+(L=30 km, Nu=1, TF friction angle weakening by 50%):
     Running LaMEM in this directory using "input.dat" will integrate for 300 timestep
     with the ridge segments held fixed.  Copy "restart" to the following folder.
     Wm1e3 (wm=1e3 km):
@@ -18,6 +13,11 @@ LaMEM_Input_Files_Output_Folders/L30Nu1.5Weak50
 LaMEM_Input_Files_Output_Folders/L30Nu1.75Weak50
 LaMEM_Input_Files_Output_Folders/L30Nu2Weak50
 LaMEM_Input_Files_Output_Folders/L30Nu2.5Weak50
+--------------------------------------------------------------------------
+MATLAB *.m files
+---------------------------------------------------------------------------
+Fig7_LaMEM_analytic_stress_profs.m will then produce Fig. 5 
+   
 
 
 

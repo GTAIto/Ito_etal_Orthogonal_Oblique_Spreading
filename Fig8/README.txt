@@ -8,8 +8,7 @@ Fig8_vary_wTF.m produce panels a-c
 Fig8_vary_wTF_stress_profiles produce panels d-e.
 ---------------------------------------------------------------------------
 LaMEM Models:
-LaMEM_Input_Files_Output_Folders/L30Nu2Weak00
-(L=30 km, Nu=2, zero TF & FZ weakening):
+LaMEM_Input_Files_Output_Folders/L30Nu2Weak00 (L=30 km, Nu=2, zero TF weakening):
      Running LaMEM in this directory using "input.dat" will integrate for 300 timestep
     with the ridge segments held fixed.  Copy "restart" to the following folder.
     Wm1e3 (wm=1e3 km):

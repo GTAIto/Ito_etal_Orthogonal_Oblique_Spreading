@@ -12,7 +12,7 @@ Garrett Ito (gito@hawaii.edu), Jana Schierjott, Mark D. Behn, Xiaochuan Tian, Bo
 
 # Overview
 
-This repository has all input files and MATLAB scripts needed to reproduce Figures 2, 4, 5, 7, 8, 9, 10 and 11.
+This repository has all input files and MATLAB scripts needed to reproduce Figures 2, 4, 5, 7, 8, 9, 10, 11, and 12. Visit each folder and read "Readme.txt" for instructions on reproducing the model solutions and the figures.
 
 # 
 

@@ -1,16 +1,7 @@
---------------------------------------------------------------------------
-MATLAB *.m files
---------------------------------------------------------------------------
-
-First run "stress_analyze_cell_multiplemods.m" to compute statistics.  Note
-that the paths of the various folders are given in the file so the user will
-need to change those appropriately to point to the location of the model
-output
-
 ---------------------------------------------------------------------------
 LaMEM Models:
 LaMEM_Input_Files_Output_Folders/L30Nu2Weak00
-(L=30 km, Nu=2, zero TF & FZ weakening):
+(L=30 km, Nu=2, zero TF weakening):
     Running LaMEM in this directory using "input.dat" will integrate for 300 timestep
     with the ridge segments held fixed.
 
@@ -28,5 +19,15 @@ LaMEM_Input_Files_Output_Folders/L30Nu2Weak25 (TF & FZ weakened by 25%)
 LaMEM_Input_Files_Output_Folders/L30Nu2Weak50 (TF & FZ weakened by 50%)
 LaMEM_Input_Files_Output_Folders/L30Nu2Weak75 (TF & FZ weakened by 75%)
 LaMEM_Input_Files_Output_Folders/L30Nu2Weak90 (TF & FZ weakened by 90%)
+
+--------------------------------------------------------------------------
+MATLAB *.m files
+--------------------------------------------------------------------------
+
+First run "stress_analyze_cell_multiplemods.m" to compute statistics.  Note
+that the paths of the various folders are given in the file so the user will
+need to change those appropriately to point to the location of the model
+output
+
 
 

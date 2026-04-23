@@ -1,14 +1,3 @@
---------------------------------------------------------------------------
-MATLAB *.m files
---------------------------------------------------------------------------
-
-First run "stress_analyze_cell_multiplemods.m" to compute statistics.  Note
-that the paths of the various folders are given in the file so the user will
-need to change those appropriately to point to the location of the model
-output
-
-Fig9_vary_dhnorm.m produce panels a-b
-Fig9_vary_dhnorm_profiles produce panels c-e.
 ---------------------------------------------------------------------------
 LaMEM Models:
 LaMEM_Input_Files_Output_Folders/L30Nu1.5Weak50 (L=30 km, Nu=2, TF and FZ friction angle weakened by 50%):
@@ -24,6 +13,17 @@ LaMEM_Input_Files_Output_Folders/L30Nu1Weak50
 LaMEM_Input_Files_Output_Folders/L30Nu1.5Weak50 
 LaMEM_Input_Files_Output_Folders/L30Nu1.75Weak75 
 LaMEM_Input_Files_Output_Folders/L30Nu2.5Weak90 
+--------------------------------------------------------------------------
+MATLAB *.m files
+--------------------------------------------------------------------------
+
+First run "stress_analyze_cell_multiplemods.m" to compute statistics.  Note
+that the paths of the various folders are given in the file so the user will
+need to change those appropriately to point to the location of the model
+output
+
+Fig10_vary_dhnorm.m produce panels a-b
+Fig10_vary_dhnorm_profiles produce panels c-e.
 
 
 
