@@ -25,7 +25,7 @@ j4TFLthickness=find(abs(x-xTF)==min(abs(x-xTF)));
 zTF=zLa(j4TFLthickness);
 %zTF=mean(zLa(x>=0 & x <=xridge));
 
-tauTF=rho*g*tand(phi.*(1-weak)).*(TFfac.*zTF*1e3).^2./2/1e9;  %LaMEM reduces friction agnel see constEq.cpp
+tauTF=rho*g*tand(phi.*(1-weak)).*(TFfac.*zTF*1e3).^2./2/1e9;  %LaMEM reduces friction angle see constEq.cpp
 zLa_array=ones(Ny,1)*zLa;
 %zLa_array=lthick;  disp(['>>>Model lithosphere thickness is LaMEM lthick!'])
 

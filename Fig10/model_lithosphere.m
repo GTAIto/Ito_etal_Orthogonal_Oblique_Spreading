@@ -48,24 +48,25 @@ if (hdfit==8)
     sigfit=[0.7 0.6 0.5 0.45 0.3]; %fits the lithosphere for nuk1-2.5, hd=8km
     %dist4sigR=3;
 else
-    nu2fit=[1    1.5 2   2.5 3];
-    z0Gfit=[4.5 5 6.5 8 9]; 
+    nu2fit=[1    1.5 2   2.5 3  4 5];
+    z0Gfit=[4.5  5  6.5  8   9 11.2 13.8]; 
     %z0Gfit=[4.5 5 6.5 8 11];   
-    zlGampfit=[3 2.9 2.8   2  1];  
-    zlGampfit=[4 2.9 2.8   2  1];  
-    sigfit=[0.9 0.8 0.5 0.45 0.3]; %fits the lithosphere for nuk1-2.5, hd=9km
+    zlGampfit=[3 2.9 2.8   2  1 0.05 0.3];  
+    zlGampfit=[4 2.9 2.8   2  1 0.05 0.3];  
+    sigfit=[0.9 0.8 0.5 0.45 0.3 0.15 0.05]; %fits the lithosphere for nuk1-2.5, hd=9km
 end    
 
-nu_kfit  =[1   1   1   1   1]*0.3;  
+nu_kfit  =[1   1   1   1   1 1 1]*0.3;  
 
 pzlGamp=polyfit([nu2fit],zlGampfit,2);  %originally
+%pzlGamp=polyfit([nu2fit],zlGampfit,1);
+
 pz0G=polyfit(nu2fit,z0Gfit,1);  %ORIGINAL with hd=8;
 pnu_k=polyfit(nu2fit,nu_kfit,2);
-psig=polyfit(nu2fit,sigfit,3);%originally
-px0=polyfit(nu2fit,x0fit,3);
-        
-pzlGamp=polyfit([nu2fit],zlGampfit,1);
-psig=polyfit(nu2fit,sigfit,1);
+psig=polyfit(nu2fit,sigfit,2);
+%px0=polyfit(nu2fit,x0fit,3);
+
+
 %--------------------------------------------------------------------------
 % Gaussian Part
 %--------------------------------------------------------------------------
@@ -73,7 +74,8 @@ z0G=polyval(pz0G,nu2);
 z0G=z0G.*z0TFf;             %minimums lithosphere thickness at ridge axis
 zLGamp=polyval(pzlGamp,nu2);
 zLGamp=zLGamp.*zlGampTFf;
-zLGamp=max([zLGamp zlGampfit(end)]);
+%zLGamp=max([zLGamp zlGampfit(end)]); 
+%zLGamp=max([zLGamp 0.05]); 
 sig=polyval(psig, nu2);
 sig=max([sig sigmin]);  %Gdistfac*sig  
 nu_k=polyval(pnu_k, nu2);
@@ -82,37 +84,37 @@ nu_k=polyval(pnu_k, nu2);
 %x0=polyval(px0,nu2);  %Comment this out for ORIGINAL with hd=8 km;
 
 if (showfig==1)
-    nu2ar=[1:0.05:3];
+    nu2ar=[1:0.05:5];
     %nu2ar=nu2array;
     z0Gar=polyval(pz0G,nu2ar);
     zlGampar=polyval(pzlGamp,nu2ar);
-    zlGampar(zlGampar<zlGampfit(end))=zlGampfit(end);
+    %zlGampar(zlGampar<zlGampfit(end))=zlGampfit(end);
     nu_kar=polyval(pnu_k,nu2ar);
     sigar=polyval(psig,nu2ar);
     sigar(sigar<sigmin)=sigmin;
-    x0_ar=polyval(px0,nu2ar,2);
+    %x0_ar=polyval(px0,nu2ar,2);
     lw=1; lw2=0.7; fsz=12; tl=0.02;
 
-    figure(1); clf;
+    figure(21); clf;
     set(gcf,'Color','w');
     subplot(311)
     plot(nu2fit,z0Gfit,'o','MarkerEdgeColor',0.0*[1 1 1],'MarkerFaceColor',[0.19  0.19 0.8],'MarkerSize',10); hold on;
     plot(nu2ar,z0Gar,'k','LineWidth',lw);
     ylabel('h_0');
     grid off;
-    xlim([1 2.5]);
+    %xlim([1 2.5]);
     set(gca,'Fontsize',fsz);
     set(gca,'Fontsize',fsz,'TickLength',[tl tl],'Linewidth',lw2);
     
     subplot(312)
     plot([nu2fit],zlGampfit,'o','MarkerEdgeColor',0.0*[1 1 1],'MarkerFaceColor',[0.19  0.19 0.8],'MarkerSize',10); hold on;
     plot(nu2ar,zlGampar,'k','LineWidth',lw);
-    xlim([1 2.5]);
+    %xlim([1 4]);
     grid off;
     ylabel('\Delta h');
     set(gca,'Fontsize',fsz);
     set(gca,'Fontsize',fsz,'TickLength',[tl tl],'Linewidth',lw2);
-    yticks(2:4);
+    %yticks(2:4);
     
     subplot(313)
     plot(nu2fit,sigfit,'o','MarkerEdgeColor',0.0*[1 1 1],'MarkerFaceColor',[0.19  0.19 0.8],'MarkerSize',10); hold on;
@@ -120,7 +122,7 @@ if (showfig==1)
     ylabel('w_h');
     grid off;
     xlabel('Nu');
-    xlim([1 2.5]);
+    %xlim([1 4]);
     set(gca,'Fontsize',fsz);
     set(gca,'Fontsize',fsz,'TickLength',[tl tl],'Linewidth',lw2);
 

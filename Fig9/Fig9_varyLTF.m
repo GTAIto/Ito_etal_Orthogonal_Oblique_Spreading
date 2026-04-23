@@ -104,7 +104,7 @@ end
 
 if (0)
     disp('Outputing high-res png');
-    figure(1); exportgraphics(gcf,['Fig10_varyLTF.png'],'Resolution',600)
+    figure(1); exportgraphics(gcf,['Fig9_varyLTF.png'],'Resolution',600)
 else
     disp('Not outputing high-res png');
 end

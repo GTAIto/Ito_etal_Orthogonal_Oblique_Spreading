@@ -38,36 +38,37 @@ magPfac=1;
 zsol_max=-20;
 
 
+%fname=['sxx_results_Tsol' num2str(Tsol) '.txt'];
 !/bin/rm sxx_results.txt
-fidout=fopen('sxx_results_dhnorm.txt','w');
+%pwd
+fidout=fopen('sxx_results_LTF.txt','w');
 fig1='30'; fig2='20';  
 
 dtave0=0.5; %time over which to evaluate mean slope. Other numbers are start times for dynamic diking
 TFlength_measure_rate=15;
 
 
-%iwhich='TFlength';
-%iwhich='g4v1LT   ';
-iwhich='dhnorm   ';
-%iwhich='wTF';
+
+iwhich='TFlength';
 
 
-for imod=1:5
+for imod=1:6
     istep=310;
     dtstart=0;
-    if (imod==1)
-        istep=390; 
-        fig1='1'; fig2='5';   cd LaMEM_Input_Files_Output_Folders/L30Nu1Weak50/Wm1e3; logdir='log';dtave=0.5; mpw=1e3; 
-        %fig1='1'; fig2='5';   cd LaMEM_Input_Files_Output_Folders/L30Nu1Weak50/Wm1e3; logdir='log';dtave=0.5; mpw=1e3; 
-    elseif (imod==2)
-        fig1='12'; fig2='25';   cd LaMEM_Input_Files_Output_Folders/L30Nu1.5Weak50/Wm1e3; logdir='log';  dtave=0.5; mpw=1e3; 
+    if (imod==1)     
+       fig2='5'; cd LaMEM_Input_Files_Output_Folders/L05nuk2Weak50/Wm1e3;  logdir='log'; mpw=1e3; dtave=0.4;
+    elseif (imod==2)     
+       fig2='15'; cd LaMEM_Input_Files_Output_Folders/L10nuk2Weak50/Wm1e3;  logdir='log'; mpw=1e3; dtave=0.3;
     elseif (imod==3)
-        fig1='22'; fig2='35';   cd LaMEM_Input_Files_Output_Folders/L30Nu1.75Weak50/Wm1e3; logdir='log';  dtave=0.5; mpw=1e3; 
+       istep=360;
+       fig2='25'; cd LaMEM_Input_Files_Output_Folders/L20nuk2Weak50/Wm1e3;  logdir='log'; mpw=1e3;  dtave=0.7;
     elseif (imod==4)
-        fig1='20'; fig2='45';	cd LaMEM_Input_Files_Output_Folders/L30Nu2Weak50/Wm1e3;  logdir='log';dtave=0.45; mpw=1e3; 
-    elseif (imod==5) 
-        fig1='30'; fig2='55';   cd LaMEM_Input_Files_Output_Folders/L30Nu2.5Weak50/Wm1e3; logdir='log';  dtave=0.45; mpw=1e3; 
-    end
+        fig2='35'; fig2='37'; cd LaMEM_Input_Files_Output_Folders/L30Nu2Weak50/Wm1e3; logdir='log'; mpw=1e3;  dtave=0.45; 
+    elseif (imod==5)
+        fig1='40'; fig2='45'; cd LaMEM_Input_Files_Output_Folders/L40nuk2Weak50/Wm1e3;  logdir='log'; mpw=1e3; dtave=0.45;
+    elseif (imod==5)
+        fig1='50'; fig2='55'; cd LaMEM_Input_Files_Output_Folders/L50nuk2Weak50/Wm1e3;  logdir='log'; mpw=1e3; dtave=0.45; 
+    end 
 %--------------------------------------------------------------------------
 % Parse model params
 %--------------------------------------------------------------------------
@@ -126,5 +127,5 @@ for imod=1:5
     
     fprintf(fidout,'%4.2f %4.2f  %4.2f  %4.2f  %4.2f  %5.1f   %3.0f    %5.2f      %5.4f      %5.3f     %5.3f   %5.2f  %5.1f  %7.4f  %4.2f  %5.1f  %8.3f \n', outmean');
 end
-
+%TFlength_measure_rate
 fclose(fidout);

@@ -19,6 +19,7 @@ cols=size(dat3,2);
 [isteps,iu]=unique(dat3(:,2));
 time=(dat3(iu,end));
 tmax=time(1)+100*dtave;
+tmax=time(1)+1;
 %tmax=2.62+dtave; %nuk3
 %tmax=1.8+dtave;  %nuk1_2
 %tmax=5.5;
@@ -97,13 +98,14 @@ if (show_dike_hist==1)
     eval(['figure(' fig2 '); clf;']);
     set(gcf,'Color','w')
     plot(time(1:nTF),TFlength,'.-'); hold on;
-    plot(time(ii),polyval(p,time(ii),'k'));
+    plot(time(1:nTF),polyval(p,time(1:nTF),'k'));
     xlabel('Time (Myr)');
     ylabel('TF length, km');
     %mean_slope=(TFlength(ii(end))-TFlength(1))/(time(ii(end))-time(1));
     %axis([time(1) time(1)+dtave 20 30]);
     grid on
     precis=1000;
-    %ylim([20 30]);
+    xlim([time(1) tmax]);
+    ylim([21 30]);
     title([model ': dwdt=' num2str(round(precis*dwdt)/precis) 'km/Myr']);
 end
